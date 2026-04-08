@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Ghost</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Administrative fragmenting demo</p>
+          <h1>Admin Ghost</h1>
+          <p class="lede">
+            A background helper that watches inbox triggers, extracts the useful bits,
+            and quietly files them away before the owner loses another half hour to tab
+            hopping.
+          </p>
+        </div>
+        <div class="ghost-card">
+          <span class="ghost-label">Always on</span>
+          <strong>Watching for receipts, invoices, bookings, and reminders</strong>
+          <p>Parse, route, and file without opening the spreadsheet.</p>
+        </div>
+      </section>
+
+      <section class="dashboard">
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Incoming triggers</h2>
+            <button id="scan-btn">Scan now</button>
+          </div>
+          <div id="trigger-list" class="stack"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>Auto-file output</h2>
+            <span class="pill">Background routing</span>
+          </div>
+          <div class="split">
+            <div>
+              <h3>Spreadsheet</h3>
+              <div id="sheet" class="sheet"></div>
+            </div>
+            <div>
+              <h3>Accounting sync</h3>
+              <div id="accounting" class="stack compact"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel footer-panel">
+        <div class="panel-head">
+          <h2>What the owner sees</h2>
+          <span class="pill muted">No extra tabs</span>
+        </div>
+        <div id="summary" class="summary"></div>
+      </section>
+    </main>
+
+    <template id="trigger-template">
+      <article class="trigger-card">
+        <div class="trigger-top">
+          <strong></strong>
+          <span class="tag"></span>
+        </div>
+        <p class="details"></p>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
